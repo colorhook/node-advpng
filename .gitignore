@@ -1,0 +1,7 @@
+node_modules
+example
+.svn
+.DS_Store
+bin/*.exe
+bin/gifsicle
+npm-debug.log

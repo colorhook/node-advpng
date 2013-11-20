@@ -1,0 +1,46 @@
+{
+    "name": "advpng",
+    "version": "0.0.1",
+	"description": "advpng Node wrapper",
+    "keywords": ["advpng", "advpng node wrapper"],
+    "main": "lib/advpng.js",
+    "bin": {
+      "bee": "bin/advpng"
+    },
+    "engines": {
+        "node" : ">=0.8.0"
+    },
+	"author": "colorhook <colorhook@gmail.com>",
+	"maintainers": [{
+      "name": "colorhook",
+      "email": "colorhook@gmail.com",
+      "url": "http://colorhook.com"
+    }],
+	"bugs": {
+        "email": "colorhook@gmail.com",
+        "url": "http://github.com/colorhook/node-advpng/issues"
+    },
+    "dependencies": {
+    	"which": "~1.0.5",
+        "mocha": "~1.12.0",
+        "chalk": "~0.2.0",
+        "request": "~2.26.0"
+    },
+    "devDependencies":{
+    },
+    "scripts":{
+        "test": "mocha test --timeout 10000 --globals hasCert",
+        "postinstall": "node pre-build.js"
+    },
+    "homepage": "https://github.com/colorhook/node-advpng",
+    "repository" : {
+        "type" : "git",
+        "url" : "git://github.com/colorhook/node-advpng.git"
+    },
+	"licenses": [
+        {
+            "type": "MIT",
+            "url": "http://github.com/colorhook/node-advpng/blob/master/LICENSE"
+        }
+    ]
+}
