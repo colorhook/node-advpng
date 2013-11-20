@@ -13,10 +13,9 @@ describe('advpng', function () {
 	});
 
 
-    it('get the advpng version', function (cb) {
+  it('get the advpng version', function (cb) {
 		var binPath = require('../lib/advpng.js').path;
-		execFile(binPath, ['--version'], function (err, stdout, stderr) {
-            console.log(stdout.toString().toLowerCase())
+		execFile(binPath, ['-h'], function (err, stdout, stderr) {
 			assert(stdout.toString().toLowerCase().indexOf('advancecomp') !== -1);
 			cb();
 		});
@@ -34,7 +33,7 @@ describe('advpng', function () {
 			var actual = fs.statSync(advFile).size;
 			var original = fs.statSync(minFile).size;
             console.log("actual:", actual, " original:", original);
-			assert(actual < original);
+			assert(actual <= original);
 			cb();
 		});
 	});

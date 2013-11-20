@@ -3,5 +3,5 @@ example
 .svn
 .DS_Store
 bin/*.exe
-bin/gifsicle
+bin/advpng
 npm-debug.log
