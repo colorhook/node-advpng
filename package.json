@@ -5,7 +5,7 @@
     "keywords": ["advpng", "advpng node wrapper"],
     "main": "lib/advpng.js",
     "bin": {
-        "advpng": "bin/advpng"
+        "advpng": "bin/advpng.js"
     },
     "engines": {
         "node" : ">=0.8.0"
