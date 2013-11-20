@@ -27,7 +27,9 @@ if (fs.existsSync(binPath)) {
 	request.get(binUrl)
 		.pipe(fs.createWriteStream(binPath))
 		.on('close', function () {
-			fs.chmod(binPath, '0755');
+             try{
+			   fs.chmod(binPath, '0755');
+             }catch(err){}
 			runTest();
 		});
 }
