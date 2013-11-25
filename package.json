@@ -1,6 +1,6 @@
 {
     "name": "node-advpng",
-    "version": "0.0.1",
+    "version": "0.0.2",
 	"description": "advpng Node wrapper",
     "keywords": ["advpng", "advpng node wrapper"],
     "main": "lib/advpng.js",
@@ -15,6 +15,10 @@
       "name": "colorhook",
       "email": "colorhook@gmail.com",
       "url": "http://colorhook.com"
+    }, {
+      "name": "LaurentGoderre",
+      "email": "laurent.goderre@gmail.com",
+      "url": "http://github.com/LaurentGoderre"
     }],
 	"bugs": {
         "email": "colorhook@gmail.com",
