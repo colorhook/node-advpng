@@ -23,12 +23,30 @@ function runTest() {
 if (fs.existsSync(binPath)) {
 	runTest();
 } else {
-	request.get(binUrl)
-		.pipe(fs.createWriteStream(binPath))
-		.on('close', function () {
-             try{
-			   fs.chmod(binPath, '0755');
-             }catch(err){}
-			runTest();
-		});
+
+    var downloadByURL = function(url, callback){
+      console.log("download from "+url);
+      var stream = request.get(binUrl).pipe(fs.createWriteStream(binPath));
+      stream.on('close', function () {
+        callback();
+      });
+      stream.on('error', callback);
+    }
+    var onComplete = function(err){
+      if(err){
+        return console.log("error: advpng cannot be installed, please check the binary path is available");
+      }
+      try{
+       fs.chmod(binPath, '0755');
+      }catch(err){}
+      runTest();
+    }
+	downloadByURL(binUrl, function(err){
+      if(err){
+        binUrl = binUrl.replace("https://", "http://");
+        return dowuloadByURL(backUrl, onComplete);
+      }else{
+        onComplete();
+      }
+    });
 }
