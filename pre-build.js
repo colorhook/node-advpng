@@ -13,22 +13,21 @@ function runTest() {
 	mocha.run(function (failures) {
 		if (failures > 0) {
 			console.log(chalk.red('pre-build test failed, compiling from source...'));
-            throw new Error("node-advpng cannot be installed, please contact colorhook@gmail.com");
+			throw new Error("node-advpng cannot be installed, please contact colorhook@gmail.com");
 		} else {
 			console.log(chalk.green('pre-build test passed successfully, skipping build...'));
 		}
 	});
 }
-
 if (fs.existsSync(binPath)) {
 	runTest();
 } else {
 	request.get(binUrl)
 		.pipe(fs.createWriteStream(binPath))
 		.on('close', function () {
-             try{
-			   fs.chmod(binPath, '0755');
-             }catch(err){}
+			try{
+				fs.chmod(binPath, '0755');
+			}catch(err){}
 			runTest();
 		});
 }
