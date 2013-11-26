@@ -16,6 +16,7 @@ describe('advpng', function () {
   it('get the advpng version', function (cb) {
 		var binPath = require('../lib/advpng.js').path;
 		execFile(binPath, ['-h'], function (err, stdout, stderr) {
+            console.log(stdout.toString());
 			assert(stdout.toString().toLowerCase().indexOf('advancecomp') !== -1);
 			cb();
 		});
