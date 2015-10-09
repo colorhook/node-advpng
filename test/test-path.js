@@ -29,7 +29,7 @@ describe('advpng', function () {
         var advFile = path.join(__dirname, 'example.adv.png');
         var data = fs.readFileSync(minFile);
         fs.writeFileSync(advFile, data);
-		var args = [advFile, '-z', '-4'];
+		var args = ['-z', '-4', advFile];
 		execFile(binPath, args, function () {
 			var actual = fs.statSync(advFile).size;
 			var original = fs.statSync(minFile).size;

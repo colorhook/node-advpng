@@ -1,6 +1,6 @@
 {
     "name": "node-advpng",
-    "version": "0.0.2",
+    "version": "0.0.3",
 	"description": "advpng Node wrapper",
     "keywords": ["advpng", "advpng node wrapper"],
     "main": "lib/advpng.js",
