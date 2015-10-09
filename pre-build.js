@@ -24,7 +24,6 @@ function runTest() {
 if (fs.existsSync(binPath)) {
 	runTest();
 } else {
-		
     var downloadByURL = function(url, callback){
       console.log("download from "+url);
       var stream = request.get(binUrl).pipe(fs.createWriteStream(binPath));
